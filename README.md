@@ -19,13 +19,20 @@ Whether you're building a SaaS product, dashboard, or admin interface, these MCP
 
 - `.cursor/nextjs.rules.mdc` – the main rule file for Cursor AI
 - Guidance for:
-  - Project structure
-  - Styling and accessibility
-  - Data fetching and state management
-  - Linting and naming conventions
-  - Supabase integration
-  - Zod validation and schema handling
-  - Documentation generation
+    📁 Project structure
+    🎨 Styling & ♿ Accessibility
+    📥 Data fetching
+    🔁 State management
+    🧹 Linting & naming conventions
+    🔍 Code style & formatting
+    ✅ Code quality enforcement
+    ⚙️ Framework best practices
+    🚀 Performance optimization
+    🛠️ Build notes for clarity
+    💬 Tone and inline documentation
+    🧬 Supabase API & auth structure
+    🧾 Zod validation schema handling
+    📚 Auto-generated project documentation
 
 ---
 
