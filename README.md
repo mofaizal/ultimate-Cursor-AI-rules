@@ -1,5 +1,3 @@
-# ultimate-Cursor-AI-rules
-🧠 Ultimate Cursor AI Rules – Next.js + Supabase + Tailwind + Shadcn UI
 # 🧠 Ultimate Cursor AI Rules – Next.js + Supabase + Tailwind + Shadcn UI
 
 This repository provides a production-grade `.cursor/nextjs.rules.mdc` file to supercharge your **Cursor AI** workflow for modern frontend projects using:
@@ -19,20 +17,20 @@ Whether you're building a SaaS product, dashboard, or admin interface, these MCP
 
 - `.cursor/nextjs.rules.mdc` – the main rule file for Cursor AI
 - Guidance for:
-    📁 Project structure
-    🎨 Styling & ♿ Accessibility
-    📥 Data fetching
-    🔁 State management
-    🧹 Linting & naming conventions
-    🔍 Code style & formatting
-    ✅ Code quality enforcement
-    ⚙️ Framework best practices
-    🚀 Performance optimization
-    🛠️ Build notes for clarity
-    💬 Tone and inline documentation
-    🧬 Supabase API & auth structure
-    🧾 Zod validation schema handling
-    📚 Auto-generated project documentation
+  - 📁 Project structure
+  - 🎨 Styling & ♿ Accessibility
+  - 📥 Data fetching
+  - 🔁 State management
+  - 🧹 Linting & naming conventions
+  - 🔍 Code style & formatting
+  - ✅ Code quality enforcement
+  - ⚙️ Framework best practices
+  - 🚀 Performance optimization
+  - 🛠️ Build notes for clarity
+  - 💬 Tone and inline documentation
+  - 🧬 Supabase API & auth structure
+  - 🧾 Zod validation schema handling
+  - 📚 Auto-generated project documentation
 
 ---
 
