@@ -1,0 +1,178 @@
+---
+alwaysApply: true
+description: "Ultimate Cursor AI Rules – Next.js + Supabase + Tailwind + Shadcn UI"
+---
+
+# 🎯 AI Prompting & Coding Philosophy
+
+- Follow the user’s requirements exactly and completely.
+- Think step-by-step in detailed pseudocode before writing code.
+- Focus on readable, maintainable, and modular code over performance.
+- Do not leave placeholders or TODOs – implement everything fully.
+- Always validate user inputs and handle errors explicitly.
+- Use early returns to reduce nesting and improve clarity.
+- Avoid unnecessary abstractions or over-engineering.
+- Keep generated code focused and minimal – no extra commentary.
+- Use `const` for arrow functions (`const handleClick = () => {}`).
+- Use descriptive names for variables, functions, components.
+
+---
+
+# 💅 Code Style and Structure
+
+## ✅ Code Quality & Style
+
+- Respect `.eslintrc`, `.prettierrc`, and project linting setup.
+- Use TypeScript for all files.
+- Prefer named exports over default exports.
+- Avoid inline logic in JSX – abstract into constants or helpers.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Use type-safe utility functions in `lib/`.
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+
+## 🔠 Naming Conventions
+
+- Variables: `camelCase`
+- Types/Interfaces: `PascalCase`
+- File names: `kebab-case` or `camelCase` (project-specific)
+- Events: Start with `handle` (e.g., `handleChange`, `handleSubmit`)
+- Constants: Uppercase with underscores (`API_URL`)
+
+## 🔧 Syntax & Formatting
+
+- Use Prettier formatting.
+- Max 80–100 characters per line.
+- No semicolons if your Prettier config omits them.
+- Group and sort imports logically (React, then external, then local).
+- Remove all unused imports and variables.
+- Add meaningful inline comments only where needed — don't over-comment obvious logic.
+
+## 🚀 Performance Optimization
+
+- Use `useMemo`, `useCallback`, and lazy loading to avoid unnecessary renders.
+- Lazy load heavy client-only components or libraries using `dynamic()`.
+- Use Suspense and loading UI responsibly for Server Components.
+- Debounce rapid state updates (e.g., search inputs).
+- Fetch only necessary fields from Supabase or APIs.
+- Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
+- Wrap client components in Suspense with fallback.
+- Use dynamic loading for non-critical components.
+- Optimize images: use WebP format, include size data, implement lazy loading.
+
+---
+
+# 🧱 Stack & Framework Conventions
+
+## ✅ App Router (Next.js)
+
+- Use `app/` directory, not `pages/`.
+- Use Server Components by default.
+- Use `use client` sparingly and only for interactive components.
+- Prefer server-side form actions or route handlers.
+- Export `metadata` for SEO per layout or route.
+
+## 🧬 Data Fetching
+
+- Prefer `async/await` in Server Components and route handlers.
+- Use Supabase client in `lib/supabase/`.
+- For parallel data fetching, use `Promise.all`.
+- Always use loading and error states in UI.
+- Use revalidation with `fetch(..., { next: { revalidate: ... } })`.
+
+## 🔁 State Management
+
+- Prefer local component state (`useState`, `useReducer`) over libraries.
+- Use server state from Supabase instead of duplicating on client.
+- For global client state, use `zustand`, `jotai`, or `context`, not Redux.
+
+---
+
+# 🎨 Styling & UI Rules
+
+## ✅ Tailwind + Shadcn UI
+
+- Use Tailwind CSS classes for all UI styling.
+- Use `class:` bindings instead of ternary operations.
+- Tailwind class order: Layout → Flex/Grid → Spacing → Color → Typography
+- Never use custom CSS unless required.
+- Use shadcn/ui components from `@/components/ui/...`
+- Compose components (e.g., `Dialog + Button + Form`)
+- Put reusable form components in `components/form/`.
+
+---
+
+# ♿ Accessibility
+
+- All interactive elements must support keyboard and screen readers:
+  - `tabIndex="0"`, `aria-label`, `role`, `onClick`, `onKeyDown`
+- Use semantic elements (`button`, `a`, `form`, `fieldset`)
+- Label all inputs and controls properly.
+
+---
+
+# ⚙️ Supabase Integration
+
+- Place Supabase config in `lib/supabase/client.ts`.
+- Handle auth and DB logic in `services/supabase/`.
+- Use `try/catch` for every Supabase API call.
+- Use TypeScript types (`infer`) from Supabase responses.
+- Avoid hardcoding table or column names in multiple places.
+
+---
+
+# ✅ Forms & Validation with Zod
+
+- Define schemas in `schemas/` folder.
+- Use `zodResolver` with `react-hook-form`.
+- Validate both on client and server.
+
+---
+
+# 🛠️ Create 'Build Notes'
+
+When generating code that spans multiple files or layers:
+- Include a short note on:
+  - New files created
+  - Key logic overview
+  - Required changes to existing components
+  - Any CLI commands to run (`npx supabase db push`, etc.)
+
+---
+
+# 📁 Recommended Folder Structure
+
+```txt
+app/
+├── layout.tsx
+├── page.tsx
+├── dashboard/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── settings/
+components/
+├── ui/                → shadcn/ui components
+├── common/            → Shared UI blocks
+├── form/              → Form inputs and logic
+lib/
+├── supabase/          → Supabase client and helpers
+├── utils.ts           → General util functions
+services/
+├── supabase/          → Auth and DB logic
+schemas/
+├── user.schema.ts     → Zod schemas and types
+types/
+├── index.ts           → Global types and enums
+public/
+├── images/
+styles/
+├── globals.css
+.env.local
+README.md
+SUPABASE_SCHEMA.md
+TODO.md
+tailwind.config.ts
+tsconfig.json
